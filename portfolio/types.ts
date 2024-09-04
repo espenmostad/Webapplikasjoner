@@ -4,8 +4,7 @@ import { z } from "zod";
 export const ProjectSchema = z.object({
   tittel: z.string(),
   url: z.string(),
-  beskrivelse: z.string()
-  
+  beskrivelse: z.string()  
 });
 
 // Definerer et Zod-skjema for å opprette en ny Habit
@@ -18,4 +17,4 @@ export const ProjectArraySchema = z.array(ProjectSchema);
 export type Project = z.infer<typeof ProjectSchema>;
 
 // Oppdatert type-definisjon basert på Zod-skjemaet
-export type CreateProject = z.infer<typeof ProjectCreateSchema>;
+export type CreateProject = z.infer<typeof ProjectSchema>;

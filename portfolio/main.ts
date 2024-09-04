@@ -8,6 +8,7 @@ const projectsList = document.getElementById("projectsList") as HTMLUListElement
 const projects: Project[] = [];
 
 
+
 form.addEventListener("submit", async (event: SubmitEvent) => {
     event.preventDefault();
   
@@ -49,6 +50,11 @@ form.addEventListener("submit", async (event: SubmitEvent) => {
     } catch (error) {
       console.error("Feil ved sending av data til serveren:", error);
     }
+
+    form.elements.namedItem("title_input").value = "";
+    form.elements.namedItem("url_input").value = "";
+    form.elements.namedItem("description").value = "";
+    location.reload();
   });
   
   function updateProjectsList() {
@@ -89,7 +95,7 @@ form.addEventListener("submit", async (event: SubmitEvent) => {
           // Forsøker å parse og validere dataene med Zod-skjemaet
           const validatedProjects = ProjectArraySchema.parse(data);
   
-          projects.push(...validatedProjects); // Legger til validerte vaner i den interne listen
+          projects.push(...validatedProjects); // Legger til validerte prosjekter i den interne listen
           updateProjectsList(); // Oppdaterer visningen på nettsiden
         } catch (error) {
           if (error instanceof z.ZodError) {
@@ -131,14 +137,10 @@ form.addEventListener("submit", async (event: SubmitEvent) => {
             const project_description = document.createElement("p");  
             project_description.textContent = project.beskrivelse;
         
-            
-            
-
             newElement.appendChild(project_title);
             newElement.appendChild(project_description);
             newElement.appendChild(project_url);
             
-
             jsonId?.appendChild(newElement);
         }
       });
