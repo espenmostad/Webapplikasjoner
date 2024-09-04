@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Portfolio v1</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>Portfolio</h3>
+            <ul>
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">Prosjekter</a></li>
+                <li><a href="#">Kontakt meg</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>        
+        <section class="add_project">
+            <h2>Legg til nytt prosjekt</h2>
+            <form id="project_form">
+                <label for="title_input">Tittel</label><br> 
+                <input type="text" id="title_input" placeholder="Tittel" class="title_form"/><br>
+                <label for="url_input">URL</label><br> 
+                <input type="text" id="url_input" placeholder="https://www.example.com" class="title_form"/><br>
+                <label for="description">Beskrivelse</label><br>
+                <textarea name="description" id="description" class="description_form">
+                    </textarea> <br>
+                <button type="submit">Legg til prosjekt</button>
+            </form>
+        </section>
+
+        <h2 id="project_header">Mine prosjekter</h2>
+
+        <section class="list_projects" id="json">
+            
+        </section>
+        <script type="module" src="main.ts"></script>
+    </main>
+
+    <footer>
+        &#169; Espen Mostad Webapplikasjoner 2024
+    </footer>
+</body>
+</html>
