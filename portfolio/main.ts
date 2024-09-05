@@ -54,6 +54,7 @@ form.addEventListener("submit", async (event: SubmitEvent) => {
     form.elements.namedItem("title_input").value = "";
     form.elements.namedItem("url_input").value = "";
     form.elements.namedItem("description").value = "";
+    
     location.reload();
   });
   
